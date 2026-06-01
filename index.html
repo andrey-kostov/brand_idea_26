@@ -12,7 +12,7 @@
       --teal-dark: #087263;
       --mint: #E7F4EF;
       --yellow: #FFE66B;
-      --orange: #E7925D;
+      --orange: #cd8355;
       --peach: #FFF0DE;
       --lavender: #EAD8EA;
       --lavender-soft: #F5EDF7;
@@ -58,9 +58,8 @@
     }
 
     .hero {
-          min-height: 150px;
-    display: flex;
-    padding: 22px 0;
+        display: flex;
+      padding: 12px 0;
     }
 
     .brand-left,
@@ -96,10 +95,10 @@
     }
 
     .brand-left img{
-              display: block;
-    float: left;
-    width: auto;
-    max-width: 160px;
+        display: block;
+        float: left;
+        width: auto;
+        max-width: 130px;
     }
 
     .icon-badge {
@@ -840,6 +839,10 @@
       font-style: italic;
     }
 
+    #generateBtn{
+      width: 100%;
+    }
+
     .footer-note {
       margin: 20px auto 32px;
       width: min(1240px, 94vw);
@@ -992,13 +995,14 @@
           </div>
 
           <div class="actions">
-            <button id="generateBtn" class="btn-primary" type="button">Генерирай отбори</button>
             <button id="exportCsvBtn" class="btn-secondary" type="button">Експорт CSV</button>
             <button id="loadJsonBtn" class="btn-secondary" type="button">Зареди participants.json</button>
             <button id="clearBtn" class="btn-secondary" type="button">Изчисти всичко</button>
           </div>
           <input id="participantsFileInput" type="file" accept=".json,application/json" hidden />
-          </div>
+          <br>
+        </div>
+        <button id="generateBtn" class="btn-primary" type="button">Генерирай отбори</button>
         </section>
       </section>
 
@@ -1543,9 +1547,10 @@
 
       const csv = rows
         .map((row) => row.map(escapeCsvCell).join(","))
-        .join("\n");
+        .join("\r\n");
 
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const utf8Bom = "\uFEFF";
+      const blob = new Blob([utf8Bom, csv], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       const timestamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
