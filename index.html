@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="bg">
 <head>
   <meta charset="UTF-8" />
@@ -351,7 +351,7 @@
     }
 
     .toggle-entry-label::after {
-      content: "▸";
+      content: "▾";
       color: #5b6974;
       font-size: 0.78rem;
       transition: transform 0.2s ease;
@@ -1660,22 +1660,20 @@
 
       return card;
     }
-
     function renderLeftovers() {
       const unresolvedHighSchool = state.leftoversHighSchool;
       const unresolvedUniversity = state.leftoversUniversity;
       const total = unresolvedHighSchool.length + unresolvedUniversity.length;
 
-      els.leftoversCount.textContent = `${total} ${participantsLabel(total)}`;
       els.leftoversContent.innerHTML = "";
+      els.leftoversCount.textContent = `${total} ${participantsLabel(total)}`;
 
       if (total === 0) {
-        const empty = document.createElement("span");
-        empty.className = "leftover-empty";
-        empty.textContent = "Няма такива участници.";
-        els.leftoversContent.appendChild(empty);
+        els.leftovers.hidden = true;
         return;
       }
+
+      els.leftovers.hidden = false;
 
       unresolvedHighSchool.forEach((name) => {
         const pill = document.createElement("span");
@@ -1887,3 +1885,5 @@
   </script>
 </body>
 </html>
+
+
