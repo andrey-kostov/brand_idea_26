@@ -203,6 +203,19 @@
       gap: 10px;
     }
 
+    .dashboard.wide-teams.widest-teams{
+          display: flex;
+    flex-direction: column-reverse;
+    }
+
+    .dashboard.wide-teams.widest-teams section.panel{
+      width: 100%;
+    }
+
+    .dashboard.wide-teams.widest-teams .teams-grid{
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .dashboard.widest-teams {
       grid-template-columns: 0.22fr 0.78fr;
     }
