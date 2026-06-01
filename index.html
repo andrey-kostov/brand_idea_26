@@ -1,557 +1,1031 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="bg">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brand Idea 26</title>
+  <title>Brand Idea 2026</title>
   <style>
     :root {
-      --bg: #f4f7fb;
-      --surface: #ffffff;
-      --surface-2: #f8fafc;
-      --text: #17212b;
-      --muted: #5b6775;
-      --line: #d9e2ec;
-      --accent: #0b6ed0;
-      --accent-hover: #0959aa;
-      --danger: #cf3348;
-      --radius: 14px;
-      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --cream: #F6F0E5;
+      --card: #FFFDF8;
+      --teal: #0E8F78;
+      --teal-dark: #087263;
+      --mint: #E7F4EF;
+      --yellow: #FFE66B;
+      --orange: #E7925D;
+      --peach: #FFF0DE;
+      --lavender: #EAD8EA;
+      --lavender-soft: #F5EDF7;
+      --text: #24313A;
+      --muted: #6E7A83;
+      --border: #E8DED0;
+      --shadow: 0 10px 24px rgba(41, 31, 18, 0.10);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --slot-shadow: 0 8px 18px rgba(45, 32, 19, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 15% 15%, #e5eefb 0%, transparent 36%),
-        radial-gradient(circle at 85% 0%, #e7f5f2 0%, transparent 32%),
-        var(--bg);
-      min-height: 100vh;
+        radial-gradient(circle at 88% 14%, rgba(234, 216, 234, 0.65) 0%, transparent 34%),
+        radial-gradient(circle at 16% 2%, rgba(255, 230, 107, 0.35) 0%, transparent 24%),
+        var(--cream);
+    }
+
+    .green-text{
+      color: var(--teal)!important;
+    }
+
+    .top-strip {
+      height: 10px;
+      background: linear-gradient(90deg, var(--teal-dark) 0%, var(--teal) 100%);
+    }
+
+    .header-shell {
+      background: #f9f3e8;
+      border-bottom: 1px solid var(--border);
     }
 
     .container {
-      width: min(1100px, 92vw);
-      margin: 40px auto 56px;
+      width: min(1240px, 94vw);
+      margin: 0 auto;
     }
 
     .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 24px;
+          min-height: 150px;
+    display: flex;
+    padding: 22px 0;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      letter-spacing: -0.02em;
+    .brand-left,
+    .brand-right {
+          display: flex;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
     }
 
-    .subtitle {
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 680px;
-      line-height: 1.5;
+    .brand-right {
+      justify-self: end;
+      text-align: left;
     }
 
-    .toc {
-      margin-bottom: 24px;
-      background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 14px 16px;
+    .logo-badge,
+    .icon-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--teal-dark);
+      background: linear-gradient(145deg, #ffffff 0%, #f1eadf 100%);
+      border: 1px solid #e5d8c5;
+      box-shadow: 0 8px 16px rgba(35, 27, 14, 0.08);
+      flex-shrink: 0;
     }
 
-    .toc-title {
-      margin: 0 0 10px;
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #415063;
-      font-weight: 700;
+    .brand-left img{
+              display: block;
+    float: left;
+    width: auto;
+    max-width: 160px;
     }
 
-    .toc a {
-      display: inline-block;
-      text-decoration: none;
-      color: #26435f;
-      background: #f1f7ff;
-      border: 1px solid #d7e8fb;
+    .icon-badge {
       border-radius: 999px;
-      padding: 7px 12px;
+      background: var(--mint);
+      border-color: #cbe5dc;
+    }
+
+    .hero h1,
+    .hero h2,
+    .hero p {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+    }
+
+    .brand-title.green{
+      color: var(--teal-dark);
+    }
+
+    .brand-subtitle {
+      margin-top: 4px;
+      color: var(--muted);
       font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .toc a:hover {
-      background: #e6f2ff;
-      transform: translateY(-1px);
+    .right-title {
+      font-size: 1.07rem;
+      font-weight: 800;
+      color: #214841;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: var(--radius);
+    .right-subtitle {
+      margin-top: 4px;
+      color: #597068;
+      font-size: 0.9rem;
+    }
+
+    .hero-center {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .dots {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-image: radial-gradient(var(--teal) 2px, transparent 2px);
+      background-size: 10px 10px;
+      opacity: 0.55;
+    }
+
+    .semi {
+      width: 36px;
+      height: 18px;
+      border-radius: 36px 36px 0 0;
+      background: var(--yellow);
+      border: 1px solid #e6cd46;
+      transform: translateY(-2px);
+    }
+
+    .blob {
+      width: 44px;
+      height: 34px;
+      border-radius: 20px 20px 12px 12px;
+      background: var(--lavender);
+      opacity: 0.85;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .main {
+      padding: 26px 0 30px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .dashboard.wide-teams {
+      grid-template-columns: 0.32fr 0.68fr;
+    }
+
+    .dashboard.wide-teams #leftPanelContent .groups-grid{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dashboard.widest-teams {
+      grid-template-columns: 0.22fr 0.78fr;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       padding: 20px;
     }
 
-    main section + section {
-      margin-top: 22px;
+    .panel h3,
+    .panel p {
+      margin: 0;
     }
 
-    .card h2 {
-      margin: 0 0 14px;
-      font-size: 1.08rem;
-      letter-spacing: 0.01em;
+    .left-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #26483f;
+      margin-bottom: 6px;
     }
 
-    .forms {
+    .collapse-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .collapse-trigger .collapse-indicator {
+      font-size: 0.95rem;
+      color: #5f6c77;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .collapse-trigger[aria-expanded="false"] .collapse-indicator {
+      transform: rotate(-90deg);
+    }
+
+    .left-subtitle {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 16px;
+    }
+
+    .groups-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
-    .input-group label {
-      display: block;
-      font-weight: 600;
+    .group-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .group-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(34, 26, 15, 0.07);
+    }
+
+    .group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
       margin-bottom: 8px;
-      color: #273444;
+    }
+
+    .group-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .group-tag .mini {
+      width: 23px;
+      height: 23px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .students .group-tag { color: #1f6c58; }
+    .students .group-tag .mini { background: var(--mint); border: 1px solid #c8e8dc; }
+    .university .group-tag { color: #8b542d; }
+    .university .group-tag .mini { background: var(--peach); border: 1px solid #f0cfb6; }
+
+    .count-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: #f8f4eb;
+      border: 1px solid #eadfce;
+      color: #5e6b75;
     }
 
     .input-row {
-      display: flex;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
-    input[type="text"] {
-      flex: 1;
-      border: 1px solid var(--line);
+    label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 650;
+      color: #51606c;
+      margin-bottom: 6px;
+    }
+
+    .toggle-entry-label {
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-entry-label::after {
+      content: "▸";
+      color: #5b6974;
+      font-size: 0.78rem;
+      transition: transform 0.2s ease;
+    }
+
+    .toggle-entry-label[aria-expanded="true"]::after {
+      transform: rotate(90deg);
+    }
+
+    .entry-row-hidden {
+      display: none;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      border: 1px solid #dfd3c3;
       border-radius: 10px;
-      padding: 11px 12px;
-      font-size: 0.97rem;
+      padding: 10px 12px;
+      font-size: 0.94rem;
       outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
       background: #fff;
+      color: var(--text);
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
     }
 
-    input[type="text"]:focus {
-      border-color: #6ba8e3;
-      box-shadow: 0 0 0 3px rgba(11, 110, 208, 0.16);
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+      border-color: #7bb7aa;
+      box-shadow: 0 0 0 3px rgba(14, 143, 120, 0.16);
     }
 
     button {
       border: none;
-      border-radius: 10px;
-      padding: 11px 14px;
-      font-size: 0.95rem;
-      font-weight: 600;
       cursor: pointer;
-      transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: transform 0.16s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(1px) scale(0.99); }
+
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid rgba(14, 143, 120, 0.5);
+      outline-offset: 2px;
     }
 
-    button:active {
-      transform: translateY(1px) scale(0.99);
-    }
-
-    .btn-primary {
-      background: var(--accent);
+    .add-btn {
+      width: 40px;
+      font-size: 1.15rem;
+      line-height: 1;
       color: #fff;
+      background: var(--teal);
+      box-shadow: 0 5px 12px rgba(14, 143, 120, 0.28);
     }
 
-    .btn-primary:hover {
-      background: var(--accent-hover);
-    }
+    .add-btn:hover { background: var(--teal-dark); }
+    .university .add-btn { background: var(--orange); box-shadow: 0 5px 12px rgba(231, 146, 93, 0.3); }
+    .university .add-btn:hover { background: #cb7745; }
 
-    .btn-secondary {
-      background: var(--surface-2);
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-
-    .btn-danger {
-      background: #fff1f3;
-      color: var(--danger);
-      border: 1px solid #ffd4db;
-    }
-
-    .lists {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .list-box {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      background: #fff;
-      min-height: 120px;
-    }
-
-    .list-box h3 {
-      margin: 2px 0 10px;
-      font-size: 0.95rem;
-      color: #2b3a4a;
-    }
-
-    .list-box ul {
+    .names-list {
       list-style: none;
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 8px;
+      gap: 7px;
+      max-height: 210px;
+      overflow: auto;
     }
 
-    .list-box li {
+    .names-list li {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: 9px;
-      background: #f8fafc;
-      border: 1px solid #edf2f7;
-      font-size: 0.95rem;
-    }
-
-    .mini-remove {
-      font-size: 0.82rem;
-      padding: 5px 8px;
-      border-radius: 8px;
-      background: #fff;
-      color: #5f6b7b;
-      border: 1px solid #d9e2ec;
-    }
-
-    .mini-remove:hover {
-      background: #f5f8fb;
-    }
-
-    .teams-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .team-rule {
-      margin-bottom: 14px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      background: #fbfdff;
-    }
-
-    .team-rule h3 {
-      margin: 0 0 8px;
-      font-size: 0.94rem;
-      color: #2b3a4a;
-    }
-
-    .team-rule p {
-      margin: 0 0 10px;
-      color: #556577;
-      font-size: 0.9rem;
-    }
-
-    .rule-choice {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 12px;
-      padding: 10px;
-      border: 1px solid #dfe8f2;
+      gap: 6px;
       border-radius: 10px;
-      background: #ffffff;
+      padding: 7px 9px;
+      font-size: 0.9rem;
+      border: 1px solid;
+      transition: background 0.2s ease;
     }
 
-    .rule-choice label {
+    .participant-name {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .attendance-toggle {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      font-size: 0.92rem;
-      color: #233446;
-      font-weight: 600;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 650;
+      color: #566775;
+      flex-shrink: 0;
+    }
+
+    .attendance-toggle input[type="checkbox"] {
+      accent-color: var(--teal);
+      width: 15px;
+      height: 15px;
       cursor: pointer;
     }
 
-    .rule-choice input[type="radio"] {
-      accent-color: #0b6ed0;
+    .university .attendance-toggle input[type="checkbox"] {
+      accent-color: var(--orange);
+    }
+
+    .students .names-list li {
+      background: #f3faf7;
+      border-color: #dceee7;
+    }
+
+    .students .names-list li:hover {
+      background: #eaf6f1;
+    }
+
+    .university .names-list li {
+      background: #fff7ee;
+      border-color: #f3dfcc;
+    }
+
+    .university .names-list li:hover {
+      background: #fff0e1;
+    }
+
+    .mini-remove {
+      width: 26px;
+      height: 26px;
+      border: 1px solid #d7cdc0;
+      border-radius: 8px;
+      background: #fff;
+      color: #5a6671;
+      font-size: 0.98rem;
+      line-height: 1;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .mini-remove:hover {
+      background: #f7f2ea;
+      box-shadow: none;
+    }
+
+    .empty-line {
+      color: #71808c;
+      font-size: 0.87rem;
+      padding: 8px 4px;
+    }
+
+    .rules-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      padding: 12px;
+    }
+
+    .rules-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #2a4c43;
+      margin-bottom: 10px;
+    }
+
+    .rules-title .gear {
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+      background: var(--lavender-soft);
+      border: 1px solid #e2d0e2;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+    }
+
+    .rules-heading-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rules-mode-note {
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #d8ecdf;
+      background: #f3fbf7;
+      color: #3d6259;
+      font-size: 0.86rem;
+      font-weight: 650;
     }
 
     .rule-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
-    .rule-block {
-      border: 1px solid #e2eaf3;
+    .rule-item {
+      border: 1px solid #e6dccc;
       border-radius: 10px;
-      padding: 10px;
-      background: #ffffff;
-      transition: border-color 0.2s ease, background 0.2s ease;
+      padding: 9px;
+      background: #fffefc;
+      transition: border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
     }
 
-    .rule-block h4 {
-      margin: 0 0 8px;
-      font-size: 0.9rem;
-      color: #2b3a4a;
+    .rule-item.dim {
+      opacity: 0.58;
+      background: #f8f3ea;
     }
 
-    .rule-block.inactive {
-      background: #f7fafd;
-      border-color: #edf2f7;
-      opacity: 0.7;
-    }
-
-    .rule-grid label {
+    .rule-head {
       display: block;
       margin-bottom: 5px;
-      color: #2b3a4a;
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #394a57;
     }
 
-    input[type="number"] {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
-      background: #fff;
+    .rule-input-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 8px;
     }
 
-    input[type="number"]:focus {
-      border-color: #6ba8e3;
-      box-shadow: 0 0 0 3px rgba(11, 110, 208, 0.16);
+    .icon-pill {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 0.72rem;
+      border: 1px solid;
+      flex-shrink: 0;
     }
+
+    .icon-students { background: var(--mint); border-color: #c6e7db; color: #1d6f5a; }
+    .icon-university { background: var(--peach); border-color: #efcfb7; color: #995e35; }
+    .icon-teams { background: var(--lavender-soft); border-color: #e0cde3; color: #7a4f86; }
 
     .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 11px 12px;
+      font-size: 0.93rem;
+      min-height: 43px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--teal);
+      box-shadow: 0 8px 16px rgba(14, 143, 120, 0.26);
+    }
+
+    .btn-primary:hover { background: var(--teal-dark); }
+
+    .btn-secondary {
+      color: #5f6c77;
+      background: #fff;
+      border: 1px solid #ddd1c0;
+    }
+
+    .btn-secondary:hover { background: #f6f1e8; }
+
+    .right-panel-head {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .right-panel-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: #274c43;
+    }
+
+    .teams-count {
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: var(--lavender-soft);
+      border: 1px solid #e0d0e3;
+      color: #684e72;
     }
 
     .teams-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
-    .team {
-      border-radius: 12px;
+    .team-slot {
+      border-radius: 14px;
+      border: 1px solid #e7dbca;
+      background: #fff;
+      box-shadow: var(--slot-shadow);
       padding: 12px;
-      border: 1px solid #dbe4ef;
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      position: relative;
+      overflow: hidden;
+      /* min-height: 220px; */
       opacity: 0;
-      transform: translateY(8px);
-      animation: teamIn 0.45s ease forwards;
+      transform: translateY(6px);
+      animation: slotIn 0.38s ease forwards;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .team strong {
-      display: block;
+    .team-slot::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--teal) 0%, #56b7a4 100%);
+    }
+
+    .team-slot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(32, 24, 14, 0.11);
+    }
+
+    .team-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
       margin-bottom: 8px;
-      font-size: 0.93rem;
-      color: #244d75;
+      padding-left: 8px;
     }
 
-    .muted {
-      color: var(--muted);
+    .team-id {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: #1f5146;
+      font-size: 0.93rem;
+    }
+
+    .team-num {
+      width: 27px;
+      height: 27px;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.84rem;
+    }
+
+    .team-members-count {
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      background: #eef9f5;
+      color: #317463;
+      border: 1px solid #d0eae1;
+    }
+
+    .team-content {
+      padding-left: 8px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .team-group-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4f5f6d;
+      margin-bottom: 4px;
+    }
+
+    .member-list {
+      list-style: none;
+      padding: 0;
       margin: 0;
-      font-size: 0.94rem;
+      display: grid;
+      gap: 4px;
     }
 
-    .leftovers {
-      margin-top: 14px;
-      color: #3f4c5c;
-      font-size: 0.93rem;
-      background: #f8fafc;
-      border: 1px solid #e6edf5;
+    .member-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.86rem;
+      color: #304252;
+      padding: 2px 0;
+      border-bottom: 1px dotted #e8ddd0;
+    }
+
+    .member-item:last-child { border-bottom: none; }
+
+    .member-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .member-dot.students { background: #39a78f; }
+    .member-dot.university { background: #dd864f; }
+
+    .team-placeholder {
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #7f8a94;
+      font-size: 0.9rem;
+      border: 1px dashed #dfd4c5;
       border-radius: 10px;
-      padding: 10px;
+      background: #fffdf8;
+      margin-top: 6px;
+      padding: 12px;
     }
 
-    .list-box li.item-enter {
-      animation: itemIn 0.35s ease;
+    .leftovers-card {
+      border: 1px solid #e1d1e4;
+      border-radius: 14px;
+      background: var(--lavender-soft);
+      padding: 11px;
     }
 
-    .toc ul {
+    .leftovers-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .leftovers-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #5d3f68;
+    }
+
+    .leftovers-count {
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #6f4f79;
+      border: 1px solid #d8c5de;
+      background: #fff;
+    }
+
+    .leftovers-content {
+      color: #4f5d69;
+      font-size: 0.9rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      gap: 7px;
+      min-height: 26px;
     }
 
-    @keyframes teamIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .leftover-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid;
+      font-size: 0.82rem;
+      background: #fff;
     }
+
+    .leftover-pill.students { border-color: #c7e8dc; color: #1f6d58; }
+    .leftover-pill.university { border-color: #efcfb8; color: #8e5430; }
+
+    .leftover-empty {
+      color: #6f7d89;
+      font-style: italic;
+    }
+
+    .footer-note {
+      margin: 20px auto 32px;
+      width: min(1240px, 94vw);
+      text-align: center;
+      color: #61717d;
+      font-size: 0.88rem;
+      background: #fff8ec;
+      border: 1px solid #ecdfcd;
+      border-radius: 999px;
+      padding: 10px 16px;
+    }
+
+    .item-enter { animation: itemIn 0.3s ease; }
 
     @keyframes itemIn {
-      from {
-        opacity: 0;
-        transform: translateY(5px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: 94vw;
-        margin-top: 24px;
-      }
+    @keyframes slotIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .card {
-        padding: 16px;
+    @media (max-width: 1090px) {
+      .dashboard { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        gap: 14px;
       }
+      .hero-center { order: 3; }
+      .brand-right { justify-self: start; }
+    }
 
-      .input-row {
-        flex-direction: column;
-      }
+    @media (max-width: 760px) {
+      .groups-grid,
+      .actions,
+      .teams-grid,
+      .rule-grid { grid-template-columns: 1fr; }
 
-      .input-row button {
-        width: 100%;
-      }
+      .team-slot { min-height: 0; }
+
+      .btn-primary,
+      .btn-secondary { width: 100%; }
+
+      .container { width: 95vw; }
+      .main { padding-top: 16px; }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <header class="hero">
-      <div>
-        <h1>Brand Idea 26</h1>
-        <p class="subtitle">Инструмент за добавяне на ученици и студенти, преглед на списъци и автоматично разпределяне в екипи по зададени правила.</p>
+  <div class="top-strip" aria-hidden="true"></div>
+
+  <header class="header-shell">
+    <div class="container hero">
+      <div class="brand-left">
+        <img src="logo.png">
+        <div>
+          <h1 class="brand-title green">BRAND IDEA 2026</h1>
+          <p class="brand-subtitle">Твоето бранд предизвикателство</p>
+        </div>
+        
       </div>
-    </header>
 
-    <nav class="toc" aria-label="Съдържание на секциите">
-      <p class="toc-title">Съдържание</p>
-      <ul>
-        <li><a href="#sekciya-vuvejdane">Добавяне на участници</a></li>
-        <li><a href="#sekciya-spisuci">Добавени имена</a></li>
-        <li><a href="#sekciya-ekipi">Генериране на екипи</a></li>
-      </ul>
-    </nav>
+    </div>
+  </header>
 
-    <section class="card" aria-labelledby="sekciya-vuvejdane">
-      <h2 id="sekciya-vuvejdane">Добавяне на участници</h2>
-      <div class="forms">
-        <div class="input-group">
-          <label for="highSchoolInput">Име на ученик</label>
-          <div class="input-row">
-            <input id="highSchoolInput" type="text" placeholder="Например: Иван Петров" autocomplete="off" />
-            <button id="addHighSchoolBtn" class="btn-primary" type="button">Добави</button>
+  <main class="container main">
+    <div id="dashboard" class="dashboard">
+      <section class="panel" aria-labelledby="leftPanelTitle">
+        <h3 id="leftPanelTitle" class="left-title collapse-trigger" role="button" tabindex="0" aria-expanded="true">
+          <span class = "green-text">Участници</span>
+          <span class="collapse-indicator" aria-hidden="true">▾</span>
+        </h3>
+        <div id="leftPanelContent" class="left-panel-content">
+          <br>
+
+          <div class="groups-grid">
+            <article class="group-card students" aria-labelledby="studentsCardTitle">
+              <div class="group-head">
+                <div class="group-tag" id="studentsCardTitle"><span class="mini" aria-hidden="true">У</span>Ученици</div>
+                <span id="highSchoolCountBadge" class="count-badge">0</span>
+              </div>
+              <label id="highSchoolInputLabel" class="toggle-entry-label" for="highSchoolInput" role="button" tabindex="0" aria-expanded="false">Име на ученик</label>
+              <div id="highSchoolEntryRow" class="input-row entry-row-hidden">
+                <input id="highSchoolInput" type="text" placeholder="Добави име на ученик..." autocomplete="off" />
+                <button id="addHighSchoolBtn" class="add-btn" type="button" aria-label="Добави ученик">+</button>
+              </div>
+              <ul id="highSchoolList" class="names-list"></ul>
+            </article>
+
+            <article class="group-card university" aria-labelledby="universityCardTitle">
+              <div class="group-head">
+                <div class="group-tag" id="universityCardTitle"><span class="mini" aria-hidden="true">С</span>Студенти</div>
+                <span id="universityCountBadge" class="count-badge">0</span>
+              </div>
+              <label id="universityInputLabel" class="toggle-entry-label" for="universityInput" role="button" tabindex="0" aria-expanded="false">Име на студент</label>
+              <div id="universityEntryRow" class="input-row entry-row-hidden">
+                <input id="universityInput" type="text" placeholder="Добави име на студент..." autocomplete="off" />
+                <button id="addUniversityBtn" class="add-btn" type="button" aria-label="Добави студент">+</button>
+              </div>
+              <ul id="universityList" class="names-list"></ul>
+            </article>
           </div>
         </div>
 
-        <div class="input-group">
-          <label for="universityInput">Име на студент</label>
-          <div class="input-row">
-            <input id="universityInput" type="text" placeholder="Например: Мария Георгиева" autocomplete="off" />
-            <button id="addUniversityBtn" class="btn-primary" type="button">Добави</button>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section class="rules-card" aria-labelledby="rulesTitle">
+          <h4 id="rulesTitle" class="rules-title collapse-trigger" role="button" tabindex="0" aria-expanded="true">
+            <span class="rules-heading-group green-text">Правила за генериране</span>
+            <span class="collapse-indicator" aria-hidden="true">▾</span>
+          </h4>
+          <br>
+          <div id="rulesContent" class="rules-content">
 
-    <section class="card" aria-labelledby="sekciya-spisuci">
-      <h2 id="sekciya-spisuci">Добавени имена по групи</h2>
-      <div class="lists">
-        <div class="list-box">
-          <h3>Ученици</h3>
-          <ul id="highSchoolList"></ul>
-        </div>
-        <div class="list-box">
-          <h3>Студенти</h3>
-          <ul id="universityList"></ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" aria-labelledby="sekciya-ekipi">
-      <div class="teams-header">
-        <h2 id="sekciya-ekipi">Случайно разпределение в екипи</h2>
-        <div class="actions">
-          <button id="generateBtn" class="btn-primary" type="button">Генерирай екипи</button>
-          <button id="clearBtn" class="btn-danger" type="button">Изчисти всичко</button>
-        </div>
-      </div>
-
-      <div class="team-rule">
-        <h3>Правило за размер на екип</h3>
-        <p>Избери кое правило да се приложи при генериране.</p>
-
-        <div class="rule-choice">
-          <label for="ruleByComposition">
-            <input id="ruleByComposition" type="radio" name="generationRule" value="composition" checked />
-            По състав на екип
-          </label>
-          <label for="ruleByTeamCount">
-            <input id="ruleByTeamCount" type="radio" name="generationRule" value="teamCount" />
-            По брой екипи
-          </label>
-        </div>
-
-        <div id="compositionRuleBlock" class="rule-block">
-          <h4>Правило по състав</h4>
+          <p class="rules-mode-note">Комбиниран режим: всички правила се прилагат едновременно.</p>
+          <br>
           <div class="rule-grid">
-            <div>
-              <label for="highSchoolCountInput">Брой ученици в екип</label>
-              <input id="highSchoolCountInput" type="number" min="1" placeholder="2" />
+            <div id="compositionRuleBlock" class="rule-item">
+              <div class="rule-head">Мин. ученици</div>
+              <div class="rule-input-row">
+                <span class="icon-pill icon-students" aria-hidden="true">У</span>
+                <input id="highSchoolCountInput" type="number" min="0" placeholder="2" />
+              </div>
             </div>
-            <div>
-              <label for="universityCountInput">Брой студенти в екип</label>
-              <input id="universityCountInput" type="number" min="1" placeholder="2" />
+
+            <div id="universityRuleBlock" class="rule-item">
+              <div class="rule-head">Мин. студенти</div>
+              <div class="rule-input-row">
+                <span class="icon-pill icon-university" aria-hidden="true">С</span>
+                <input id="universityCountInput" type="number" min="0" placeholder="2" />
+              </div>
+            </div>
+
+            <div id="teamCountRuleBlock" class="rule-item">
+              <div class="rule-head">Отбори</div>
+              <div class="rule-input-row">
+                <span class="icon-pill icon-teams" aria-hidden="true">#</span>
+                <input id="teamCountInput" type="number" min="1" placeholder="2" />
+              </div>
+            </div>
+
+            <div id="maxTeammatesRuleBlock" class="rule-item">
+              <div class="rule-head">Участници</div>
+              <div class="rule-input-row">
+                <span class="icon-pill icon-teams" aria-hidden="true">∞</span>
+                <input id="maxTeammatesInput" type="number" min="1" placeholder="6" />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="teamCountRuleBlock" class="rule-block">
-          <h4>Правило по брой екипи</h4>
-          <div>
-            <label for="teamCountInput">Желан брой екипи</label>
-            <input id="teamCountInput" type="number" min="1" placeholder="2" />
+          <div class="actions">
+            <button id="generateBtn" class="btn-primary" type="button">Генерирай отбори</button>
+            <button id="exportCsvBtn" class="btn-secondary" type="button">Експорт CSV</button>
+            <button id="loadJsonBtn" class="btn-secondary" type="button">Зареди participants.json</button>
+            <button id="clearBtn" class="btn-secondary" type="button">Изчисти всичко</button>
           </div>
-        </div>
-      </div>
+          <input id="participantsFileInput" type="file" accept=".json,application/json" hidden />
+          </div>
+        </section>
+      </section>
 
-      <div id="teamsContainer" class="teams-grid"></div>
-      <p id="teamsEmptyState" class="muted">Все още няма генерирани екипи.</p>
-      <div id="leftovers" class="leftovers" hidden></div>
-    </section>
+      <section class="panel" aria-labelledby="teamsPanelTitle">
+        <div class="right-panel-head">
+          <h3 id="teamsPanelTitle" class="right-panel-title green-text">Сформирани отбори</h3>
+          <span id="teamsCountBadge" class="teams-count">0 отбора</span>
+        </div>
+
+        <div id="teamsContainer" class="teams-grid"></div>
+
+        <section id="leftovers" class="leftovers-card" aria-labelledby="leftoversTitle">
+          <div class="leftovers-head">
+            <h4 id="leftoversTitle" class="leftovers-title">Без отбор</h4>
+            <span id="leftoversCount" class="leftovers-count">0 участници</span>
+          </div>
+          <div id="leftoversContent" class="leftovers-content"></div>
+        </section>
+      </section>
+    </div>
   </main>
+
+  <p class="footer-note">💡 Разпределението е случайно и може да бъде генерирано отново по всяко време.</p>
 
   <script>
     const STORAGE_KEY = "brand_idea_26_data";
+    const MAX_TEAM_SLOTS = 6;
 
     const state = {
       highSchool: [],
@@ -562,30 +1036,49 @@
       highSchoolPerTeam: "",
       universityPerTeam: "",
       desiredTeamCount: "",
+      maxTeammates: "",
       generationRule: "composition"
     };
 
     let latestAdded = null;
+    let isLeftPanelCollapsed = false;
+    let isRulesCollapsed = false;
 
     const els = {
+      dashboard: document.getElementById("dashboard"),
+      leftPanelTitle: document.getElementById("leftPanelTitle"),
+      leftPanelContent: document.getElementById("leftPanelContent"),
+      rulesTitle: document.getElementById("rulesTitle"),
+      rulesContent: document.getElementById("rulesContent"),
+      highSchoolInputLabel: document.getElementById("highSchoolInputLabel"),
+      universityInputLabel: document.getElementById("universityInputLabel"),
+      highSchoolEntryRow: document.getElementById("highSchoolEntryRow"),
+      universityEntryRow: document.getElementById("universityEntryRow"),
       highSchoolInput: document.getElementById("highSchoolInput"),
       universityInput: document.getElementById("universityInput"),
       addHighSchoolBtn: document.getElementById("addHighSchoolBtn"),
       addUniversityBtn: document.getElementById("addUniversityBtn"),
       highSchoolList: document.getElementById("highSchoolList"),
       universityList: document.getElementById("universityList"),
-      ruleByComposition: document.getElementById("ruleByComposition"),
-      ruleByTeamCount: document.getElementById("ruleByTeamCount"),
+      highSchoolCountBadge: document.getElementById("highSchoolCountBadge"),
+      universityCountBadge: document.getElementById("universityCountBadge"),
       compositionRuleBlock: document.getElementById("compositionRuleBlock"),
+      universityRuleBlock: document.getElementById("universityRuleBlock"),
       teamCountRuleBlock: document.getElementById("teamCountRuleBlock"),
       highSchoolCountInput: document.getElementById("highSchoolCountInput"),
       universityCountInput: document.getElementById("universityCountInput"),
       teamCountInput: document.getElementById("teamCountInput"),
+      maxTeammatesInput: document.getElementById("maxTeammatesInput"),
       generateBtn: document.getElementById("generateBtn"),
+      exportCsvBtn: document.getElementById("exportCsvBtn"),
+      loadJsonBtn: document.getElementById("loadJsonBtn"),
+      participantsFileInput: document.getElementById("participantsFileInput"),
       clearBtn: document.getElementById("clearBtn"),
       teamsContainer: document.getElementById("teamsContainer"),
-      teamsEmptyState: document.getElementById("teamsEmptyState"),
-      leftovers: document.getElementById("leftovers")
+      teamsCountBadge: document.getElementById("teamsCountBadge"),
+      leftovers: document.getElementById("leftovers"),
+      leftoversCount: document.getElementById("leftoversCount"),
+      leftoversContent: document.getElementById("leftoversContent")
     };
 
     function saveState() {
@@ -598,8 +1091,9 @@
 
       try {
         const parsed = JSON.parse(raw);
-        state.highSchool = Array.isArray(parsed.highSchool) ? parsed.highSchool : [];
-        state.university = Array.isArray(parsed.university) ? parsed.university : [];
+        state.highSchool = normalizeStoredParticipants(parsed.highSchool);
+        state.university = normalizeStoredParticipants(parsed.university);
+
         if (Array.isArray(parsed.teams)) {
           state.teams = parsed.teams.map((team) => {
             if (Array.isArray(team?.highSchoolMembers) && Array.isArray(team?.universityMembers)) {
@@ -622,12 +1116,14 @@
         } else {
           state.teams = [];
         }
+
         state.leftoversHighSchool = Array.isArray(parsed.leftoversHighSchool) ? parsed.leftoversHighSchool : [];
         state.leftoversUniversity = Array.isArray(parsed.leftoversUniversity) ? parsed.leftoversUniversity : [];
         state.highSchoolPerTeam = typeof parsed.highSchoolPerTeam === "string" ? parsed.highSchoolPerTeam : "";
         state.universityPerTeam = typeof parsed.universityPerTeam === "string" ? parsed.universityPerTeam : "";
         state.desiredTeamCount = typeof parsed.desiredTeamCount === "string" ? parsed.desiredTeamCount : "";
-        state.generationRule = parsed.generationRule === "teamCount" ? "teamCount" : "composition";
+        state.maxTeammates = typeof parsed.maxTeammates === "string" ? parsed.maxTeammates : "";
+        state.generationRule = "combined";
       } catch {
         localStorage.removeItem(STORAGE_KEY);
       }
@@ -637,14 +1133,202 @@
       return value.trim().replace(/\s+/g, " ");
     }
 
+    function normalizeStoredParticipants(list) {
+      if (!Array.isArray(list)) return [];
+
+      return list
+        .map((entry) => {
+          if (typeof entry === "string") {
+            const normalized = normalizeName(entry);
+            return normalized ? { name: normalized, attending: true } : null;
+          }
+
+          if (typeof entry?.name === "string") {
+            const normalized = normalizeName(entry.name);
+            return normalized ? { name: normalized, attending: entry.attending !== false } : null;
+          }
+
+          return null;
+        })
+        .filter(Boolean);
+    }
+
+    function uniqueNames(values) {
+      const result = [];
+      const seen = new Set();
+
+      values.forEach((value) => {
+        const normalized = normalizeName(String(value ?? ""));
+        if (!normalized) return;
+        const key = normalized.toLowerCase();
+        if (seen.has(key)) return;
+        seen.add(key);
+        result.push(normalized);
+      });
+
+      return result;
+    }
+
+    function extractNames(list) {
+      if (!Array.isArray(list)) return [];
+
+      return list
+        .map((entry) => {
+          if (typeof entry === "string") return normalizeName(entry);
+          if (typeof entry?.name === "string") return normalizeName(entry.name);
+          return "";
+        })
+        .filter(Boolean);
+    }
+
+    function inferGroup(value) {
+      const text = String(value ?? "").toLowerCase();
+      if (text.includes("high") || text.includes("school") || text.includes("учен")) return "highSchool";
+      if (text.includes("uni") || text.includes("univers") || text.includes("student") || text.includes("студент")) return "university";
+      return "";
+    }
+
+    function extractParticipantsFromJson(parsed) {
+      let highSchool = [];
+      let university = [];
+
+      if (Array.isArray(parsed?.highSchool) || Array.isArray(parsed?.university)) {
+        highSchool = extractNames(parsed.highSchool);
+        university = extractNames(parsed.university);
+      } else {
+        const flat = Array.isArray(parsed) ? parsed : (Array.isArray(parsed?.participants) ? parsed.participants : []);
+        flat.forEach((entry) => {
+          if (typeof entry !== "object" || entry === null) return;
+          const group = inferGroup(entry.group ?? entry.type ?? entry.category ?? entry.level ?? entry.role);
+          const name = normalizeName(String(entry.name ?? ""));
+          if (!name) return;
+          if (group === "highSchool") highSchool.push(name);
+          if (group === "university") university.push(name);
+        });
+      }
+
+      return {
+        highSchool: uniqueNames(highSchool),
+        university: uniqueNames(university)
+      };
+    }
+
+    function participantsJsonCandidates() {
+      const pathnameDir = window.location.pathname.endsWith("/")
+        ? window.location.pathname
+        : window.location.pathname.replace(/\/[^/]*$/, "/");
+
+      return [...new Set([
+        new URL("./participants.json", window.location.href).toString(),
+        `${window.location.origin}${pathnameDir}participants.json`,
+        `${window.location.origin}/brand_idea_26/participants.json`,
+        `${window.location.origin}/participants.json`
+      ])];
+    }
+
+    async function loadParticipantsFromJson() {
+      let raw = "";
+      let loadedFrom = "";
+      const candidates = participantsJsonCandidates();
+
+      for (const url of candidates) {
+        try {
+          const response = await fetch(url, { cache: "no-store" });
+          if (!response.ok) continue;
+
+          const text = await response.text();
+          if (!text.trim()) continue;
+
+          raw = text;
+          loadedFrom = url;
+          break;
+        } catch {
+          // Try next URL candidate.
+        }
+      }
+
+      if (!raw) {
+        console.warn("participants.json was not loaded. Tried:", candidates);
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(raw);
+        const extracted = extractParticipantsFromJson(parsed);
+        if (extracted.highSchool.length === 0 && extracted.university.length === 0) {
+          console.warn("participants.json loaded but no participants were recognized:", loadedFrom);
+          return;
+        }
+
+        applyParticipantsData(extracted);
+      } catch {
+        console.warn("participants.json could not be parsed as JSON.");
+      }
+    }
+
+    function applyParticipantsData(extracted) {
+      const savedHighSchoolAttendance = new Map(
+        state.highSchool.map((participant) => [participant.name.toLowerCase(), Boolean(participant.attending)])
+      );
+      const savedUniversityAttendance = new Map(
+        state.university.map((participant) => [participant.name.toLowerCase(), Boolean(participant.attending)])
+      );
+
+      state.highSchool = extracted.highSchool.map((name) => ({
+        name,
+        attending: savedHighSchoolAttendance.has(name.toLowerCase())
+          ? savedHighSchoolAttendance.get(name.toLowerCase())
+          : true
+      }));
+
+      state.university = extracted.university.map((name) => ({
+        name,
+        attending: savedUniversityAttendance.has(name.toLowerCase())
+          ? savedUniversityAttendance.get(name.toLowerCase())
+          : true
+      }));
+
+      state.teams = [];
+      state.leftoversHighSchool = [];
+      state.leftoversUniversity = [];
+      saveState();
+      render();
+    }
+
+    function handleParticipantsFileSelection(file) {
+      if (!file) return;
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        try {
+          const text = String(reader.result ?? "");
+          const parsed = JSON.parse(text);
+          const extracted = extractParticipantsFromJson(parsed);
+          if (extracted.highSchool.length === 0 && extracted.university.length === 0) {
+            alert("Файлът е валиден, но не съдържа разпознати участници.");
+            return;
+          }
+          applyParticipantsData(extracted);
+        } catch {
+          alert("Невалиден JSON файл.");
+        }
+      };
+
+      reader.onerror = () => {
+        alert("Грешка при прочитане на файла.");
+      };
+
+      reader.readAsText(file);
+    }
+
     function addName(group, rawValue) {
       const name = normalizeName(rawValue);
       if (!name) return;
 
-      const exists = state[group].some((item) => item.toLowerCase() === name.toLowerCase());
+      const exists = state[group].some((item) => item.name.toLowerCase() === name.toLowerCase());
       if (exists) return;
 
-      state[group].push(name);
+      state[group].push({ name, attending: true });
       latestAdded = { group, name };
       state.teams = [];
       state.leftoversHighSchool = [];
@@ -653,8 +1337,10 @@
       render();
     }
 
-    function removeName(group, index) {
-      state[group].splice(index, 1);
+    function toggleAttendance(group, index, attending) {
+      const participant = state[group][index];
+      if (!participant) return;
+      participant.attending = attending;
       state.teams = [];
       state.leftoversHighSchool = [];
       state.leftoversUniversity = [];
@@ -667,30 +1353,38 @@
 
       if (names.length === 0) {
         const li = document.createElement("li");
+        li.className = "empty-line";
         li.textContent = "Няма добавени имена.";
-        li.style.justifyContent = "flex-start";
-        li.style.color = "#6b7785";
         target.appendChild(li);
         return;
       }
 
-      names.forEach((name, index) => {
+      names.forEach((participant, index) => {
         const li = document.createElement("li");
-        if (latestAdded && latestAdded.group === group && latestAdded.name === name) {
+        if (latestAdded && latestAdded.group === group && latestAdded.name === participant.name) {
           li.classList.add("item-enter");
         }
 
         const span = document.createElement("span");
-        span.textContent = name;
+        span.className = "participant-name";
+        span.textContent = participant.name;
 
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "mini-remove";
-        btn.textContent = "Премахни";
-        btn.addEventListener("click", () => removeName(group, index));
+        const attendanceLabel = document.createElement("label");
+        attendanceLabel.className = "attendance-toggle";
 
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = Boolean(participant.attending);
+        checkbox.setAttribute("aria-label", `Присъства: ${participant.name}`);
+        checkbox.addEventListener("change", () => toggleAttendance(group, index, checkbox.checked));
+
+        const checkboxText = document.createElement("span");
+        checkboxText.textContent = "";
+
+        attendanceLabel.appendChild(checkbox);
+        attendanceLabel.appendChild(checkboxText);
         li.appendChild(span);
-        li.appendChild(btn);
+        li.appendChild(attendanceLabel);
         target.appendChild(li);
       });
     }
@@ -698,6 +1392,10 @@
     function renderLists() {
       renderList(els.highSchoolList, state.highSchool, "highSchool");
       renderList(els.universityList, state.university, "university");
+      const attendingHighSchool = state.highSchool.filter((participant) => participant.attending).length;
+      const attendingUniversity = state.university.filter((participant) => participant.attending).length;
+      els.highSchoolCountBadge.textContent = `${attendingHighSchool}/${state.highSchool.length}`;
+      els.universityCountBadge.textContent = `${attendingUniversity}/${state.university.length}`;
     }
 
     function shuffle(arr) {
@@ -713,119 +1411,292 @@
       const rawHighSchoolCount = normalizeName(els.highSchoolCountInput.value);
       const rawUniversityCount = normalizeName(els.universityCountInput.value);
       const rawTeamCount = normalizeName(els.teamCountInput.value);
-      const anyRuleInputEmpty = rawHighSchoolCount === "" || rawUniversityCount === "";
+      const rawMaxTeammates = normalizeName(els.maxTeammatesInput.value);
       const parsedHighSchoolCount = Number.parseInt(rawHighSchoolCount, 10);
       const parsedUniversityCount = Number.parseInt(rawUniversityCount, 10);
       const parsedTeamCount = Number.parseInt(rawTeamCount, 10);
-      const highSchoolPerTeam = anyRuleInputEmpty ? 2 : (parsedHighSchoolCount > 0 ? parsedHighSchoolCount : 2);
-      const universityPerTeam = anyRuleInputEmpty ? 2 : (parsedUniversityCount > 0 ? parsedUniversityCount : 2);
+      const parsedMaxTeammates = Number.parseInt(rawMaxTeammates, 10);
+      const minHighSchoolPerTeam = Number.isNaN(parsedHighSchoolCount) ? 2 : Math.max(0, parsedHighSchoolCount);
+      const minUniversityPerTeam = Number.isNaN(parsedUniversityCount) ? 2 : Math.max(0, parsedUniversityCount);
       const desiredTeamCount = parsedTeamCount > 0 ? parsedTeamCount : 2;
+      const maxTeammates = parsedMaxTeammates > 0 ? parsedMaxTeammates : Number.POSITIVE_INFINITY;
 
       state.highSchoolPerTeam = rawHighSchoolCount;
       state.universityPerTeam = rawUniversityCount;
       state.desiredTeamCount = rawTeamCount;
-      state.generationRule = els.ruleByTeamCount.checked ? "teamCount" : "composition";
+      state.maxTeammates = rawMaxTeammates;
+      state.generationRule = "combined";
 
-      const highSchoolShuffled = shuffle(state.highSchool);
-      const universityShuffled = shuffle(state.university);
+      const highSchoolShuffled = shuffle(
+        state.highSchool.filter((participant) => participant.attending).map((participant) => participant.name)
+      );
+      const universityShuffled = shuffle(
+        state.university.filter((participant) => participant.attending).map((participant) => participant.name)
+      );
       state.teams = [];
-      if (state.generationRule === "teamCount") {
-        const maxPossibleTeams = Math.min(highSchoolShuffled.length, universityShuffled.length);
-        const teamCount = Math.min(desiredTeamCount, maxPossibleTeams);
 
-        for (let i = 0; i < teamCount; i++) {
-          state.teams.push({
-            highSchoolMembers: [highSchoolShuffled[i]],
-            universityMembers: [universityShuffled[i]]
-          });
-        }
+      function distributeMembersWithCap(members, memberKey, teamCount) {
+        if (teamCount === 0) return members;
 
         let idx = 0;
-        for (let i = teamCount; i < highSchoolShuffled.length; i++) {
-          if (teamCount === 0) break;
-          state.teams[idx].highSchoolMembers.push(highSchoolShuffled[i]);
-          idx = (idx + 1) % teamCount;
-        }
+        const unresolved = [];
 
-        idx = 0;
-        for (let i = teamCount; i < universityShuffled.length; i++) {
-          if (teamCount === 0) break;
-          state.teams[idx].universityMembers.push(universityShuffled[i]);
-          idx = (idx + 1) % teamCount;
-        }
+        members.forEach((member) => {
+          let placed = false;
+          let checks = 0;
 
-        if (teamCount === 0) {
-          state.leftoversHighSchool = highSchoolShuffled;
-          state.leftoversUniversity = universityShuffled;
-        } else {
-          state.leftoversHighSchool = [];
-          state.leftoversUniversity = [];
-        }
-      } else {
-        const teamsByHighSchool = Math.floor(highSchoolShuffled.length / highSchoolPerTeam);
-        const teamsByUniversity = Math.floor(universityShuffled.length / universityPerTeam);
-        const teamCount = Math.min(teamsByHighSchool, teamsByUniversity);
+          while (checks < teamCount) {
+            const team = state.teams[idx];
+            const teamSize = team.highSchoolMembers.length + team.universityMembers.length;
 
-        for (let i = 0; i < teamCount; i++) {
-          const startHighSchool = i * highSchoolPerTeam;
-          const endHighSchool = startHighSchool + highSchoolPerTeam;
-          const startUniversity = i * universityPerTeam;
-          const endUniversity = startUniversity + universityPerTeam;
+            if (teamSize < maxTeammates) {
+              team[memberKey].push(member);
+              placed = true;
+              idx = (idx + 1) % teamCount;
+              break;
+            }
 
-          state.teams.push({
-            highSchoolMembers: highSchoolShuffled.slice(startHighSchool, endHighSchool),
-            universityMembers: universityShuffled.slice(startUniversity, endUniversity)
-          });
-        }
+            idx = (idx + 1) % teamCount;
+            checks += 1;
+          }
 
-        state.leftoversHighSchool = highSchoolShuffled.slice(teamCount * highSchoolPerTeam);
-        state.leftoversUniversity = universityShuffled.slice(teamCount * universityPerTeam);
+          if (!placed) unresolved.push(member);
+        });
+
+        return unresolved;
       }
+
+      const minimumCompositionSize = minHighSchoolPerTeam + minUniversityPerTeam;
+
+      if (minimumCompositionSize > maxTeammates) {
+        state.leftoversHighSchool = highSchoolShuffled;
+        state.leftoversUniversity = universityShuffled;
+        saveState();
+        renderTeams();
+        return;
+      }
+
+      function teamsByMinimum(poolSize, minimumPerTeam) {
+        if (minimumPerTeam === 0) return Number.POSITIVE_INFINITY;
+        return Math.floor(poolSize / minimumPerTeam);
+      }
+
+      const teamsByHighSchool = teamsByMinimum(highSchoolShuffled.length, minHighSchoolPerTeam);
+      const teamsByUniversity = teamsByMinimum(universityShuffled.length, minUniversityPerTeam);
+      const maxTeamsThatMeetMinimums = Math.min(teamsByHighSchool, teamsByUniversity);
+      const teamCount = Math.min(desiredTeamCount, maxTeamsThatMeetMinimums);
+
+      if (teamCount === 0) {
+        state.leftoversHighSchool = highSchoolShuffled;
+        state.leftoversUniversity = universityShuffled;
+        saveState();
+        renderTeams();
+        return;
+      }
+
+      for (let i = 0; i < teamCount; i++) {
+        const startHighSchool = i * minHighSchoolPerTeam;
+        const endHighSchool = startHighSchool + minHighSchoolPerTeam;
+        const startUniversity = i * minUniversityPerTeam;
+        const endUniversity = startUniversity + minUniversityPerTeam;
+
+        state.teams.push({
+          highSchoolMembers: highSchoolShuffled.slice(startHighSchool, endHighSchool),
+          universityMembers: universityShuffled.slice(startUniversity, endUniversity)
+        });
+      }
+
+      const extraHighSchool = highSchoolShuffled.slice(teamCount * minHighSchoolPerTeam);
+      const extraUniversity = universityShuffled.slice(teamCount * minUniversityPerTeam);
+      state.leftoversHighSchool = distributeMembersWithCap(extraHighSchool, "highSchoolMembers", teamCount);
+      state.leftoversUniversity = distributeMembersWithCap(extraUniversity, "universityMembers", teamCount);
 
       saveState();
       renderTeams();
     }
 
-    function renderTeams() {
-      const teams = state.teams;
-      els.teamsContainer.innerHTML = "";
-
-      if (teams.length === 0) {
-        els.teamsEmptyState.hidden = false;
-      } else {
-        els.teamsEmptyState.hidden = true;
-        teams.forEach((team, idx) => {
-          const card = document.createElement("article");
-          card.className = "team";
-          card.style.animationDelay = `${idx * 70}ms`;
-          card.innerHTML = `
-            <strong>Екип ${idx + 1}</strong>
-            <div>Ученици: ${team.highSchoolMembers.join(", ")}</div>
-            <div>Студенти: ${team.universityMembers.join(", ")}</div>
-          `;
-          els.teamsContainer.appendChild(card);
-        });
-      }
-
-      const unresolvedHighSchool = state.leftoversHighSchool;
-      const unresolvedUniversity = state.leftoversUniversity;
-
-      if (unresolvedHighSchool.length === 0 && unresolvedUniversity.length === 0) {
-        els.leftovers.hidden = true;
-        els.leftovers.textContent = "";
+    function exportTeamsCsv() {
+      if (state.teams.length === 0) {
+        alert("Няма генерирани отбори за експорт.");
         return;
       }
 
-      const parts = [];
-      if (unresolvedHighSchool.length > 0) {
-        parts.push(`Останали ученици без екип: ${unresolvedHighSchool.join(", ")}`);
-      }
-      if (unresolvedUniversity.length > 0) {
-        parts.push(`Останали студенти без екип: ${unresolvedUniversity.join(", ")}`);
+      const rows = [["Team", "Type", "Name", "Project"]];
+
+      state.teams.forEach((team, idx) => {
+        const teamLabel = `Отбор ${idx + 1}`;
+
+        team.highSchoolMembers.forEach((name) => {
+          rows.push([teamLabel, "Ученици", name, ""]);
+        });
+
+        team.universityMembers.forEach((name) => {
+          rows.push([teamLabel, "Студенти", name, ""]);
+        });
+      });
+
+      function escapeCsvCell(value) {
+        const stringValue = String(value ?? "");
+        const escaped = stringValue.replace(/"/g, "\"\"");
+        return `"${escaped}"`;
       }
 
-      els.leftovers.hidden = false;
-      els.leftovers.textContent = parts.join(" | ");
+      const csv = rows
+        .map((row) => row.map(escapeCsvCell).join(","))
+        .join("\n");
+
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      const timestamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+
+      link.href = url;
+      link.download = `teams-export-${timestamp}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    function participantsLabel(count) {
+      return count === 1 ? "участник" : "участници";
+    }
+
+    function teamsLabel(count) {
+      return count === 1 ? "отбор" : "отбора";
+    }
+
+    function renderMemberGroup(title, names, type) {
+      const wrapper = document.createElement("div");
+      const label = document.createElement("div");
+      // label.className = "team-group-label";
+      // label.innerHTML = `<span class="icon-pill ${type === "students" ? "icon-students" : "icon-university"}" aria-hidden="true">${type === "students" ? "У" : "С"}</span>${title}`;
+
+      const list = document.createElement("ul");
+      list.className = "member-list";
+
+      if (names.length === 0) {
+        const li = document.createElement("li");
+        li.className = "member-item";
+        li.textContent = "Няма участници";
+        list.appendChild(li);
+      } else {
+        names.forEach((name) => {
+          const li = document.createElement("li");
+          li.className = "member-item";
+
+          const dot = document.createElement("span");
+          dot.className = `member-dot ${type}`;
+          dot.setAttribute("aria-hidden", "true");
+
+          const text = document.createElement("span");
+          text.textContent = name;
+
+          li.appendChild(dot);
+          li.appendChild(text);
+          list.appendChild(li);
+        });
+      }
+
+      wrapper.appendChild(label);
+      wrapper.appendChild(list);
+      return wrapper;
+    }
+
+    function renderTeamSlot(team, index) {
+      const card = document.createElement("article");
+      card.className = "team-slot";
+      card.style.animationDelay = `${index * 60}ms`;
+
+      const top = document.createElement("div");
+      top.className = "team-top";
+
+      const idBlock = document.createElement("div");
+      idBlock.className = "team-id";
+      idBlock.innerHTML = `<span class="team-num">${index + 1}</span><span>Отбор ${index + 1}</span>`;
+
+      const count = document.createElement("span");
+      count.className = "team-members-count";
+
+      top.appendChild(idBlock);
+      top.appendChild(count);
+      card.appendChild(top);
+
+      if (!team) {
+        count.textContent = `0 ${participantsLabel(0)}`;
+        const placeholder = document.createElement("div");
+        placeholder.className = "team-placeholder";
+        placeholder.textContent = "Очаква участници...";
+        card.appendChild(placeholder);
+        return card;
+      }
+
+      const totalMembers = team.highSchoolMembers.length + team.universityMembers.length;
+      count.textContent = `${totalMembers} ${participantsLabel(totalMembers)}`;
+
+      const content = document.createElement("div");
+      content.className = "team-content";
+      content.appendChild(renderMemberGroup("Ученици", team.highSchoolMembers, "students"));
+      content.appendChild(renderMemberGroup("Студенти", team.universityMembers, "university"));
+      card.appendChild(content);
+
+      return card;
+    }
+
+    function renderLeftovers() {
+      const unresolvedHighSchool = state.leftoversHighSchool;
+      const unresolvedUniversity = state.leftoversUniversity;
+      const total = unresolvedHighSchool.length + unresolvedUniversity.length;
+
+      els.leftoversCount.textContent = `${total} ${participantsLabel(total)}`;
+      els.leftoversContent.innerHTML = "";
+
+      if (total === 0) {
+        const empty = document.createElement("span");
+        empty.className = "leftover-empty";
+        empty.textContent = "Няма такива участници.";
+        els.leftoversContent.appendChild(empty);
+        return;
+      }
+
+      unresolvedHighSchool.forEach((name) => {
+        const pill = document.createElement("span");
+        pill.className = "leftover-pill students";
+        const dot = document.createElement("span");
+        dot.className = "member-dot students";
+        dot.setAttribute("aria-hidden", "true");
+        const text = document.createElement("span");
+        text.textContent = `У: ${name}`;
+        pill.appendChild(dot);
+        pill.appendChild(text);
+        els.leftoversContent.appendChild(pill);
+      });
+
+      unresolvedUniversity.forEach((name) => {
+        const pill = document.createElement("span");
+        pill.className = "leftover-pill university";
+        const dot = document.createElement("span");
+        dot.className = "member-dot university";
+        dot.setAttribute("aria-hidden", "true");
+        const text = document.createElement("span");
+        text.textContent = `С: ${name}`;
+        pill.appendChild(dot);
+        pill.appendChild(text);
+        els.leftoversContent.appendChild(pill);
+      });
+    }
+
+    function renderTeams() {
+      els.teamsContainer.innerHTML = "";
+
+      for (let i = 0; i < MAX_TEAM_SLOTS; i++) {
+        const team = state.teams[i];
+        els.teamsContainer.appendChild(renderTeamSlot(team, i));
+      }
+
+      const generatedTeams = state.teams.length;
+      els.teamsCountBadge.textContent = `${generatedTeams} ${teamsLabel(generatedTeams)}`;
+      renderLeftovers();
     }
 
     function clearAll() {
@@ -837,22 +1708,64 @@
       state.highSchoolPerTeam = "";
       state.universityPerTeam = "";
       state.desiredTeamCount = "";
-      state.generationRule = "composition";
+      state.maxTeammates = "";
+      state.generationRule = "combined";
       saveState();
       render();
     }
 
     function updateRuleUI() {
-      const useTeamCountRule = state.generationRule === "teamCount";
-      els.ruleByComposition.checked = !useTeamCountRule;
-      els.ruleByTeamCount.checked = useTeamCountRule;
+      els.compositionRuleBlock.classList.remove("dim");
+      els.universityRuleBlock.classList.remove("dim");
+      els.teamCountRuleBlock.classList.remove("dim");
 
-      els.compositionRuleBlock.classList.toggle("inactive", useTeamCountRule);
-      els.teamCountRuleBlock.classList.toggle("inactive", !useTeamCountRule);
+      els.highSchoolCountInput.disabled = false;
+      els.universityCountInput.disabled = false;
+      els.teamCountInput.disabled = false;
+      els.maxTeammatesInput.disabled = false;
+    }
 
-      els.highSchoolCountInput.disabled = useTeamCountRule;
-      els.universityCountInput.disabled = useTeamCountRule;
-      els.teamCountInput.disabled = !useTeamCountRule;
+    function applyPanelCollapseLayout() {
+      els.leftPanelContent.hidden = isLeftPanelCollapsed;
+      els.rulesContent.hidden = isRulesCollapsed;
+      els.leftPanelTitle.setAttribute("aria-expanded", String(!isLeftPanelCollapsed));
+      els.rulesTitle.setAttribute("aria-expanded", String(!isRulesCollapsed));
+
+      const hiddenSections = (isLeftPanelCollapsed ? 1 : 0) + (isRulesCollapsed ? 1 : 0);
+      els.dashboard.classList.toggle("wide-teams", hiddenSections >= 1);
+      els.dashboard.classList.toggle("widest-teams", hiddenSections === 2);
+    }
+
+    function bindCollapseToggle(trigger, toggleFn) {
+      trigger.addEventListener("click", toggleFn);
+      trigger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleFn();
+        }
+      });
+    }
+
+    function bindInputRowToggle(labelEl, rowEl, inputEl) {
+      function toggleRow() {
+        const isHidden = rowEl.classList.toggle("entry-row-hidden");
+        labelEl.setAttribute("aria-expanded", String(!isHidden));
+        if (!isHidden) {
+          inputEl.focus();
+        }
+      }
+
+      labelEl.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleRow();
+      });
+
+      labelEl.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleRow();
+        }
+      });
     }
 
     function render() {
@@ -861,7 +1774,9 @@
       els.highSchoolCountInput.value = state.highSchoolPerTeam;
       els.universityCountInput.value = state.universityPerTeam;
       els.teamCountInput.value = state.desiredTeamCount;
+      els.maxTeammatesInput.value = state.maxTeammates;
       updateRuleUI();
+      applyPanelCollapseLayout();
       latestAdded = null;
     }
 
@@ -904,27 +1819,53 @@
       saveState();
     });
 
-    els.ruleByComposition.addEventListener("change", () => {
-      state.generationRule = "composition";
+    els.maxTeammatesInput.addEventListener("input", () => {
+      state.maxTeammates = normalizeName(els.maxTeammatesInput.value);
       saveState();
-      updateRuleUI();
     });
 
-    els.ruleByTeamCount.addEventListener("change", () => {
-      state.generationRule = "teamCount";
-      saveState();
-      updateRuleUI();
+    els.loadJsonBtn.addEventListener("click", () => {
+      els.participantsFileInput.click();
     });
+
+    els.participantsFileInput.addEventListener("change", () => {
+      const [file] = els.participantsFileInput.files || [];
+      handleParticipantsFileSelection(file);
+      els.participantsFileInput.value = "";
+    });
+
+    bindCollapseToggle(els.leftPanelTitle, () => {
+      isLeftPanelCollapsed = !isLeftPanelCollapsed;
+      applyPanelCollapseLayout();
+    });
+
+    bindCollapseToggle(els.rulesTitle, () => {
+      isRulesCollapsed = !isRulesCollapsed;
+      applyPanelCollapseLayout();
+    });
+
+    bindInputRowToggle(els.highSchoolInputLabel, els.highSchoolEntryRow, els.highSchoolInput);
+    bindInputRowToggle(els.universityInputLabel, els.universityEntryRow, els.universityInput);
 
     els.generateBtn.addEventListener("click", generateTeams);
+    els.exportCsvBtn.addEventListener("click", exportTeamsCsv);
 
     els.clearBtn.addEventListener("click", () => {
       const ok = confirm("Сигурни ли сте, че искате да изчистите всички данни?");
       if (ok) clearAll();
     });
 
-    loadState();
-    render();
+    async function init() {
+      loadState();
+      await loadParticipantsFromJson();
+      render();
+
+      if (window.location.protocol === "file:") {
+        console.warn("Opened via file://. Use the 'Зареди participants.json' button to import participants locally.");
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>
